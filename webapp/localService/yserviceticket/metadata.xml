@@ -1,0 +1,74 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+	<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:sap="http://www.sap.com/Protocols/SAPData"
+			xmlns:c4c="http://www.sap.com/Protocols/C4CData" Namespace="yServiceTicket">
+			<EntityType Name="RelatedTransactions" c4c:parent-entity-type="ServiceTicket">
+				<Key><PropertyRef Name="ObjectID"/></Key><Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false"
+					sap:filterable="true"/><Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true"/><Property Name="ExternalKey" Type="Edm.String" Nullable="true" MaxLength="100" FixedLength="true" sap:creatable="true" sap:updatable="false"
+					sap:filterable="true"/><Property Name="ServiceTicketExternalKey" Type="Edm.String" Nullable="true" MaxLength="100" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true" sap:hierarchy-parent-node-for="ExternalKey"/><Property Name="BusinessSystemID" Type="Edm.String" Nullable="true" MaxLength="32" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="false"/><Property Name="RoleCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false" c4c:value-help="RelatedTransactionsRoleCodeCollection"/><Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="15" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false" c4c:value-help="RelatedTransactionsTypeCodeCollection"/><Property Name="ID" Type="Edm.String" Nullable="true" MaxLength="100" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false"/><Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><NavigationProperty Name="ServiceTicket" Relationship="yServiceTicket.ServiceTicket_RelatedTransactions" FromRole="RelatedTransactions"
+					ToRole="ServiceTicket"/></EntityType>
+			<EntityType Name="ServiceTicket">
+				<Key><PropertyRef Name="ObjectID"/></Key><Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false"
+					sap:filterable="true"/><Property Name="ExternalKey" Type="Edm.String" Nullable="true" MaxLength="100" FixedLength="true" sap:creatable="true" sap:updatable="false"
+					sap:filterable="true"/><Property Name="CauseCategoryID" Type="Edm.String" Nullable="true" MaxLength="25" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="false"/><Property Name="IncidentCategoryID" Type="Edm.String" Nullable="true" MaxLength="25" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="false"/><Property Name="ResolutionCategoryID" Type="Edm.String" Nullable="true" MaxLength="25" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="false"/><Property Name="ServiceCategoryID" Type="Edm.String" Nullable="true" MaxLength="25" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="true"/><Property Name="DataOriginTypeCode" Type="Edm.String" Nullable="true" MaxLength="3" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="false" c4c:value-help="ServiceTicketDataOriginTypeCodeCollection"/><Property Name="ID" Type="Edm.String" Nullable="true" MaxLength="35" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="true"/><Property Name="Name" Type="Edm.String" Nullable="true" MaxLength="255" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="true"/><Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="21" sap:creatable="false" sap:updatable="false"
+					sap:filterable="true"/><Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Nullable="true" Precision="21" sap:creatable="false" sap:updatable="false"
+					sap:filterable="true"/><Property Name="ProcessingTypeCode" Type="Edm.String" Nullable="true" MaxLength="4" FixedLength="true" sap:creatable="true"
+					sap:updatable="true" sap:filterable="true" c4c:value-help="ServiceTicketProcessingTypeCodeCollection"/><Property Name="ExternalCustomerID" Type="Edm.String" Nullable="false" MaxLength="100" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true"/><Property Name="CustomerID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="true"/><Property Name="ExternalContactID" Type="Edm.String" Nullable="false" MaxLength="100" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true"/><Property Name="ContactID" Type="Edm.String" Nullable="true" MaxLength="60" FixedLength="true" sap:creatable="false" sap:updatable="true"
+					sap:filterable="true"/><Property Name="StatusCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="true" c4c:value-help="ServiceTicketStatusCodeCollection"/><Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><NavigationProperty Name="RelatedTransactions" Relationship="yServiceTicket.ServiceTicket_RelatedTransactions" FromRole="ServiceTicket"
+					ToRole="RelatedTransactions"/><NavigationProperty Name="Notes" Relationship="yServiceTicket.ServiceTicket_Notes" FromRole="ServiceTicket" ToRole="Notes"/></EntityType>
+			<EntityType Name="Notes" c4c:parent-entity-type="ServiceTicket">
+				<Key><PropertyRef Name="ObjectID"/></Key><Property Name="ObjectID" Type="Edm.String" Nullable="false" MaxLength="70" FixedLength="true" sap:creatable="false" sap:updatable="false"
+					sap:filterable="true"/><Property Name="ParentObjectID" Type="Edm.String" Nullable="true" MaxLength="70" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true"/><Property Name="ServiceTicketExternalKey" Type="Edm.String" Nullable="true" MaxLength="100" FixedLength="true" sap:creatable="true"
+					sap:updatable="false" sap:filterable="true"/><Property Name="TypeCode" Type="Edm.String" Nullable="true" MaxLength="5" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false" c4c:value-help="NotesTypeCodeCollection"/><Property Name="LanguageCode" Type="Edm.String" Nullable="true" MaxLength="2" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false" c4c:value-help="NotesLanguageCodeCollection"/><Property Name="Text" Type="Edm.String" Nullable="true" FixedLength="false" sap:creatable="true" sap:updatable="true" sap:filterable="false"/><Property Name="CreatedOn" Type="Edm.DateTime" Nullable="true" Precision="21" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="UpdatedOn" Type="Edm.DateTime" Nullable="true" Precision="21" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="CreatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="LastUpdatedBy" Type="Edm.String" Nullable="true" MaxLength="80" FixedLength="true" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/><Property Name="AuthorName" Type="Edm.String" Nullable="true" MaxLength="40" FixedLength="true" sap:creatable="true" sap:updatable="true"
+					sap:filterable="false"/><Property Name="AuthorUUID" Type="Edm.Guid" Nullable="true" sap:creatable="true" sap:updatable="true" sap:filterable="false"/><Property Name="ETag" Type="Edm.DateTimeOffset" Nullable="true" Precision="7" ConcurrencyMode="Fixed" sap:creatable="false"
+					sap:updatable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="CodeList">
+				<Key><PropertyRef Name="Code"/></Key><Property Name="Code" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="Description" Type="Edm.String" Nullable="false" FixedLength="false" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/></EntityType>
+			<Association Name="ServiceTicket_Notes"><End Type="yServiceTicket.ServiceTicket" Multiplicity="1" Role="ServiceTicket"/><End Type="yServiceTicket.Notes" Multiplicity="*" Role="Notes"/></Association>
+			<Association Name="ServiceTicket_RelatedTransactions"><End Type="yServiceTicket.RelatedTransactions" Multiplicity="*" Role="RelatedTransactions"/><End Type="yServiceTicket.ServiceTicket" Multiplicity="1" Role="ServiceTicket"/></Association>
+			<EntityContainer Name="yserviceticket" m:IsDefaultEntityContainer="true"><EntitySet Name="NotesCollection" EntityType="yServiceTicket.Notes" sap:creatable="true" sap:updatable="true" sap:deletable="true"/><EntitySet Name="NotesLanguageCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="NotesTypeCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="RelatedTransactionsCollection" EntityType="yServiceTicket.RelatedTransactions" sap:creatable="true" sap:updatable="true"
+				sap:deletable="true"/><EntitySet Name="RelatedTransactionsRoleCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="RelatedTransactionsTypeCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="ServiceTicketCollection" EntityType="yServiceTicket.ServiceTicket" sap:creatable="true" sap:updatable="true"
+				sap:deletable="true"/><EntitySet Name="ServiceTicketDataOriginTypeCodeCollection" EntityType="yServiceTicket." sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="ServiceTicketProcessingTypeCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/><EntitySet Name="ServiceTicketStatusCodeCollection" EntityType="yServiceTicket.CodeList" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:semantics="fixed-values"/>
+				<AssociationSet Name="RelatedTransactionsCollection_ServiceTicketCollection" Association="yServiceTicket.ServiceTicket_RelatedTransactions"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"><End EntitySet="RelatedTransactionsCollection" Role="RelatedTransactions"/><End EntitySet="ServiceTicketCollection" Role="ServiceTicket"/></AssociationSet>
+				<AssociationSet Name="ServiceTicketCollection_NotesCollection" Association="yServiceTicket.ServiceTicket_Notes" sap:creatable="true"
+					sap:updatable="false" sap:deletable="false"><End EntitySet="ServiceTicketCollection" Role="ServiceTicket"/><End EntitySet="NotesCollection" Role="Notes"/></AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

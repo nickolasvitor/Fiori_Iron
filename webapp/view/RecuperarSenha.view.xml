@@ -1,0 +1,62 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.gcb.ironhouse.app.controller.RecuperarSenha" 
+    xmlns="sap.m" 
+    xmlns:form="sap.ui.layout.form" 
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f">
+    <Page showHeader="true" title="{i18n>loginTitle}" showFooter="true" showNavButton="false" backgroundDesign="Solid">        
+        <content>
+            <form:Form width="75%" editable="true" visible="true" class="sapUiLargeMarginBegin sapUiLargeMarginTop">
+            	<form:title>
+                    <core:Title text="{i18n>newPassword}" level="Auto"/>
+                </form:title>
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>password}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input id="inputPasswordId" type="Password" value="{ path: 'ResetPassword>/rpassword' }"  change="_onChangePassword" showValueHelp="false" enabled="true" visible="true" width="auto" maxLength="0"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="{i18n>confirmPassword}" width="100%" required="false" textAlign="Begin" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input id="inputConfirmPasswordId" type="Password" value="{ResetPassword>/npassword}"  change="_onChangeConfirmPassword" enabled="true" visible="true" width="auto" maxLength="0"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="false">
+                                <form:label>
+                                    <Label text="{i18n>eightDigitMinimum}" width="100%" required="false" textAlign="Begin" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                	 <HBox>
+                                    <core:Icon id="iconPasswordLengthId" width="100%" src="{ResetPassword>/passwordLengthIcon}"   />
+                                    </HBox>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="1" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </content>
+        <footer>
+            <OverflowToolbar design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="{i18n>save}" type="Emphasized" press="_onPressSave"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

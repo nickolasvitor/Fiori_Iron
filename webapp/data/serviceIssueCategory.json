@@ -1,0 +1,7 @@
+{ "serviceIssueCategory": [  
+    { "key":"CA_501","value":"Elogio"        }, 
+    { "key":"CA_502","value":"Informação"    },
+    { "key":"CA_503","value":"Solicitação"   },
+    { "key":"CA_504","value":"Reclamação"    },
+    { "key":"CA_505","value":"Sugestão"      }]
+}

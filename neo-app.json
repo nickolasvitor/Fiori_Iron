@@ -1,0 +1,61 @@
+{
+  "welcomeFile": "webapp/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "version": "1.71.3",
+        "preferLocal": true,
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "version": "1.71.3",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "SCC_QS4",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "ECC QUALIDADE"
+    },
+    {
+      "path": "/sap/c4c/odata",
+      "target": {
+        "type": "destination",
+        "name": "C4C_API"
+      },
+      "description": "C4C Service API"
+    },
+    {
+      "path": "/themedesigner",
+      "target": {
+        "type": "application",
+        "name": "themedesigner"
+      },
+      "description": "Route for theme designer"
+    },
+    {
+      "path": "/ironhousetheme",
+      "target": {
+        "type": "application",
+        "name": "ironhousetheme"
+      },
+      "description": "Route for theme"
+    }
+  ],
+  "authenticationMethod": "none",
+  "sendWelcomeFileRedirect": true
+}

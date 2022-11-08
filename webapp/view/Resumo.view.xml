@@ -1,0 +1,52 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.gcb.ironhouse.app.controller.Resumo" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:layout="sap.ui.layout">
+	<Page showHeader="true" title="{i18n>summary}" showFooter="true" showNavButton="false" navButtonPress="_onNavButtonPress">
+		<headerContent>
+			<Avatar src="/webapp/resources/notification2.png" displaySize="XS" press="_onNavigationEventsList" backgroundColor="TileIcon"/>
+			<Text text="{events>/eventCount}" class="sapUiSmallMarginTop">
+				<customData>
+					<core:CustomData key="mydata" value="White" writeToDom="true"/>
+				</customData>
+			</Text>
+			<Avatar initials="{UserInfo>/Iniciais}" displaySize="S" press="_onAvatarPress" backgroundColor="TileIcon"/>
+		</headerContent>
+		<content>
+			<layout:HorizontalLayout id="TileContainerExpanded" allowWrapping="true" class="sapUiMediumMarginBegin sapUiTinyMarginTopBottom">
+				<GenericTile header="{i18n>units}" press="_onPressUnit" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+					<tileContent>
+						<TileContent footer="" unit="">
+							<content>
+								<NumericContent value="{unit>/unitCount}" valueColor="Neutral" indicator="None" icon="sap-icon://product"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<GenericTile header="{i18n>openItems}" subheader="" frameType="OneByOne" press="_onPressOpenItems"
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+					<tileContent>
+						<TileContent>
+							<content>
+								<NumericContent value="{openItems>/openItemsCount}" valueColor="Neutral" indicator="None" icon="sap-icon://money-bills"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+				<GenericTile id="tileTicketId" header="{i18n>tickets}" subheader="{i18n>openTicket}" frameType="OneByOne" press="_onPressTickets"
+					class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout">
+					<tileContent>
+						<TileContent>
+							<content>
+								<NumericContent value="{ticket>/ticketCount}" valueColor="Critical" indicator="None" icon="sap-icon://customer-and-supplier"/>
+							</content>
+						</TileContent>
+					</tileContent>
+				</GenericTile>
+			</layout:HorizontalLayout>
+		</content>
+		<FlexBox height="100px" alignItems="End" justifyContent="Start"></FlexBox>
+		<FlexBox height="100px" alignItems="End" justifyContent="Start"></FlexBox>
+		<FlexBox height="100px" alignItems="End" justifyContent="Start"></FlexBox>
+		<FlexBox height="100px" alignItems="End" justifyContent="Start">
+			<Image src="/webapp/resources/whatsapp3.png" height="auto" width="100%" class="sapUiMediumMarginTop" press="onPressWhatsapp"/>
+		</FlexBox>
+	</Page>
+</mvc:View>

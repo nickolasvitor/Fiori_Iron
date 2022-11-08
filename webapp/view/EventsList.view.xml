@@ -1,0 +1,18 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.gcb.ironhouse.app.controller.EventsList" xmlns="sap.m">
+	<Page showHeader="true" title="Notificações" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<NotificationList items="{events>/itemNotifGroup}">
+			<layoutData>
+				<FlexItemData maxWidth="600px"/>
+			</layoutData>
+			<NotificationListGroup title="{events>title}" showCloseButton="{events>showCloseButton}" showEmptyGroup="{events>showEmptyGroup}"
+				items="{ path: 'events>groupItems', templateShareable: true }">
+				<NotificationListItem title="{events>title}" description="{events>description}" showCloseButton="false" unread="true"
+					datetime="{events>dataVisu}" authorName="{events>statusDesc}" buttons="{events>itemButtons}" press="onListItemPress">
+					<buttons>
+						<Button text="{events>text}" visible="{events>visible}" press="_onItemEventsPress"/>
+					</buttons>
+				</NotificationListItem>
+			</NotificationListGroup>
+		</NotificationList>
+	</Page>
+</mvc:View>

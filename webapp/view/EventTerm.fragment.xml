@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="{eventsTerm>/title}" resizable="true" draggable="true" class="event-term">
+		<Panel height="auto">
+			<FormattedText htmlText="{eventsTerm>/description}" width="600px"/>
+		</Panel>
+		<PDFViewer class="sapUiSmallMarginEnd" showDownloadButton="false" source="{eventsTerm>/source}" height="600px" width="600px">
+			<layoutData>
+				<FlexItemData growFactor="1"/>
+			</layoutData>
+		</PDFViewer>
+		<buttons>
+			<Button text="{i18n>textButtonRecusar}" visible="{= ${eventsTerm>/buttonClose} === false ? true : false }" press="_onTermoCancelPress"
+				type="Transparent"/>
+			<Button text="{i18n>textButtonAceitarTermo}" visible="{= ${eventsTerm>/buttonClose} === false ? true : false }" press="_onTermoAceitarPress"
+				type="Emphasized"/>
+			<Button text="{i18n>textButtonFechar}" visible="{= ${eventsTerm>/buttonClose} === true ? true : false }" press="_onTermoFecharPress"
+				type="Emphasized"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

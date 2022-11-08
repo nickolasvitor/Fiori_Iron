@@ -1,0 +1,20 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.gcb.ironhouse.app.controller.Ticket"
+    xmlns="sap.m">
+    <Page showHeader="true" title="Ticket" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+        <content>        
+            <ObjectHeader intro="{C4CSERVICE_SRV>ServiceRequestLifeCycleStatusCodeText}" title="{C4CSERVICE_SRV>Name}" icon="sap-icon://customer-and-supplier" number="#{C4CSERVICE_SRV>ID}" numberUnit="" numberState="Warning" titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
+                <attributes/>
+                <statuses/>
+                <markers/>
+            </ObjectHeader>
+            <FeedInput id="feedInputId" post="_onAnswer" showIcon="true" growing="true" enabled="true" />
+            <List id="listFeedId" width="100%" growing="false" growingThreshold="20" growingScrollToLoad="false" backgroundDesign="Solid" noDataText="{i18n>ticketMessageNotFound}"/>
+            <UploadCollection id="uploadCollectionId" maximumFilenameLength="55" maximumFileSize="10"  instantUpload="false" noDataDescription="{i18n>noFiles}"  uploadEnabled="false"
+            uploadButtonInvisible="true"/>
+        </content>
+        <footer/>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

@@ -1,0 +1,309 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"_version": "1.3.0",
+		"id": "com.gcb.ironhouse.app",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.2.2"
+		},
+		"dataSources": {
+			"ZIRONHOUSE_SRV": {
+				"uri": "/sap/opu/odata/sap/ZIRONHOUSE_SRV",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/ZIRONHOUSE_SRV/metadata.xml"
+				}
+			},
+			"c4ccustomodataapi": {
+				"uri": "/sap/c4c/odata/cust/v1/ironhouse",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/c4codataapi/metadata.xml"
+				}
+			}
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.3.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"_version": "1.3.0",
+		"rootView": {
+			"viewName": "generated.app.view.InformeIr2019",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.50.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"IronHouse": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				},
+				"dataSource": "ZIRONHOUSE_SRV",
+				"preload": true
+			},
+			"C4CSERVICE_SRV": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": true,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "Inline",
+					"useBatch": true,
+					"refreshAfterChange": true,
+					"disableHeadRequestForToken": true,
+					"headers": {
+						"Accept-Language": "pt-BR"
+					}
+				},
+				"dataSource": "c4ccustomodataapi",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.gcb.ironhouse.app.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"Login"
+					]
+				}
+			},
+			"targets": {
+				"Login": {
+					"controlAggregation": "pages",
+					"viewName": "Login",
+					"viewId": "Login",
+					"viewLevel": 4,
+					"transition": "slide"
+				},
+				"RecuperarSenha": {
+					"controlAggregation": "pages",
+					"viewName": "RecuperarSenha",
+					"viewId": "RecuperarSenha",
+					"viewLevel": 6,
+					"transition": "slide"
+				},
+				"PrimeiroAcesso": {
+					"controlAggregation": "pages",
+					"viewName": "PrimeiroAcesso",
+					"viewId": "PrimeiroAcesso",
+					"viewLevel": 5,
+					"transition": "slide"
+				},
+				"Resumo": {
+					"controlAggregation": "pages",
+					"viewName": "Resumo",
+					"viewId": "Resumo",
+					"viewLevel": 3,
+					"transition": "slide"
+				},
+				"Parcelas": {
+					"controlAggregation": "pages",
+					"viewName": "Parcelas",
+					"viewId": "Parcelas",
+					"viewLevel": 11,
+					"transition": "slide"
+				},
+				"NovoTicket": {
+					"controlAggregation": "pages",
+					"viewName": "NovoTicket",
+					"viewId": "NovoTicket",
+					"viewLevel": 7,
+					"transition": "slide"
+				},
+				"Tickets": {
+					"controlAggregation": "pages",
+					"viewName": "Tickets",
+					"viewId": "Tickets",
+					"viewLevel": 13,
+					"transition": "slide"
+				},
+				"Ticket": {
+					"controlAggregation": "pages",
+					"viewName": "Ticket",
+					"viewId": "Ticket",
+					"viewLevel": 14,
+					"transition": "slide"
+				},
+				"Unidades": {
+					"controlAggregation": "pages",
+					"viewName": "Unidades",
+					"viewId": "Unidades",
+					"viewLevel": 9,
+					"transition": "slide"
+				},
+				"Unidade": {
+					"controlAggregation": "pages",
+					"viewName": "Unidade",
+					"viewId": "Unidade",
+					"viewLevel": 10,
+					"transition": "slide"
+				},
+				"Parcela": {
+					"controlAggregation": "pages",
+					"viewName": "Parcela",
+					"viewId": "Parcela",
+					"viewLevel": 12,
+					"transition": "slide"
+				},
+				"EventsList": {
+					"controlAggregation": "pages",
+					"viewName": "EventsList",
+					"viewId": "EventsList",
+					"viewLevel": 13,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "Login/:context:",
+					"name": "Login",
+					"target": [
+						"Login"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"Login"
+					]
+				},
+				{
+					"pattern": "RecuperarSenha/{resetKey}",
+					"name": "RecuperarSenha",
+					"target": [
+						"RecuperarSenha"
+					]
+				},
+				{
+					"pattern": "PrimeiroAcesso/:context:",
+					"name": "PrimeiroAcesso",
+					"target": [
+						"PrimeiroAcesso"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}",
+					"name": "Resumo",
+					"target": [
+						"Resumo"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Parcelas",
+					"name": "Parcelas",
+					"target": [
+						"Parcelas"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Tickets",
+					"name": "Tickets",
+					"target": [
+						"Tickets"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Tickets/{ticketId}",
+					"name": "Ticket",
+					"target": [
+						"Ticket"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Unidades",
+					"name": "Unidades",
+					"target": [
+						"Unidades"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Unidades/{unitId}",
+					"name": "Unidade",
+					"target": [
+						"Unidade"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/Parcela",
+					"name": "Parcela",
+					"target": [
+						"Parcela"
+					]
+				},
+				{
+					"pattern": "Resumo/{userId}/EventsList",
+					"name": "EventsList",
+					"target": [
+						"EventsList"
+					]
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

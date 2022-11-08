@@ -1,0 +1,46 @@
+{
+    "dataBinding": {
+        "/webapp/view/Login.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/RecuperarSenha.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/PrimeiroAcesso.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Resumo.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Empreendimentos.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Parcelas.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/NovoTicket.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Tickets.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Ticket.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Unidades.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Unidade.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/Parcela.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/InformeIr.view.xml": {
+            "entitySet": ""
+        }, 
+        "/webapp/view/InformeIr2019.view.xml": {
+            "entitySet": ""
+        } 
+    }
+}

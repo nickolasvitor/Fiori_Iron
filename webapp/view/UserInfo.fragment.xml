@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified">
+		<u:Menu>
+			<u:MenuItem
+				id="menuItemUserInfoId"
+				text="{i18n>userInfo}" 
+				icon="sap-icon://employee-lookup"
+				select="_onSelectUserInfo"/>	
+			<u:MenuItem
+				id="menuItemVisaoCustomerId"
+				text="{i18n>customerView}" 
+				icon="sap-icon://customer"
+				visible="{UserInfo>/UserAdm}"
+				select="_onSelectCustomerViewInfo"/>
+			<u:MenuItem
+				text="{i18n>logoff}"
+				icon="sap-icon://log"
+				select="_onUserLogoff"/>
+		</u:Menu>
+</core:FragmentDefinition>

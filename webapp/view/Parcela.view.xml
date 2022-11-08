@@ -1,0 +1,41 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.gcb.ironhouse.app.controller.Parcela" xmlns="sap.m">
+    <Page showHeader="true" title="Parcela" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <IconTabBar expandable="false" expanded="false" applyContentPadding="false" backgroundDesign="Solid" upperCase="false" visible="false" selectedKey="Ok">
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" iconColor="Positive" text="Resumo" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                        <content/>
+                    </IconTabFilter>
+                    <IconTabSeparator icon="" iconDensityAware="false"/>
+                    <IconTabFilter icon="sap-icon://building" iconColor="Neutral" text="Empreendimentos" count="" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                        <content/>
+                    </IconTabFilter>
+                    <IconTabSeparator icon="" iconDensityAware="false"/>
+                    <IconTabFilter icon="sap-icon://customer-and-supplier" iconColor="Neutral" text="Tickets" count="2" design="Vertical" showAll="false" textDirection="Inherit" enabled="true" visible="true" iconDensityAware="false">
+                        <content/>
+                    </IconTabFilter>
+                </items>
+                <content/>
+            </IconTabBar>
+            <ObjectHeader intro="47 de 360" title="Acqua Marine" icon="sap-icon://building" number="406B" numberUnit="" numberState="Warning" titleActive="false" backgroundDesign="Translucent" condensed="false" visible="true">
+                <attributes/>
+                <statuses/>
+                <markers/>
+            </ObjectHeader>
+            <ObjectAttribute title="Status" text="Em aberto" active="false" visible="true" class="sapUiSmallMargin"/>
+            <ObjectAttribute title="Valor" text="R$ 3265,25" active="false" visible="true" class="sapUiSmallMargin"/>
+            <ObjectAttribute title="Vencimento" text="17-05-2020" active="false" visible="true" class="sapUiSmallMargin"/>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content>
+                    <ToolbarSpacer width=""/>
+                    <Button text="Gerar Boleto" type="Emphasized" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress"/>
+                </content>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+        <subHeader/>
+        <customHeader/>
+    </Page>
+</mvc:View>

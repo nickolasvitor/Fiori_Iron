@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>customerChange}">
+		<f:SimpleForm title="{i18n>customerChange}" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+			adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false">
+			<f:content>
+				<Label text="{i18n>documentType}"/>
+				<Input value="{customerModel>/Document}" enabled="{customerModel>/EditDocument}" liveChange="_onChangeDocument"/>
+				<Button text="{customerModel>/TextButton}" type="Default" press="_onProcessCustomer"/>
+			</f:content>
+		</f:SimpleForm>
+		<f:SimpleForm title="{i18n>userInfo}" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+			adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="2"
+			singleContainerFullSize="false" visible="{customerModel>/VisibleUserInfo}">
+			<f:content>
+				<Label text="{i18n>name}"/>
+				<Text text="{customerModel>/Nome}"/>
+				<Label text="{i18n>email}"/>
+				<Text text="{customerModel>/Email}"/>
+			</f:content>
+		</f:SimpleForm>
+		<buttons>
+			<Button text="{i18n>confirmButton}" type="Accept" visible="{ path: 'customerModel>/VisibleConfirm' }" press="_onCustomerConfirmPress"/>
+			<Button text="{i18n>cancel}" type="Reject" press="_onCancelFragmentPress"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

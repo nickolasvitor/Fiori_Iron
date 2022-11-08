@@ -1,0 +1,6 @@
+.sapMDialog>header.sapMDialogTitle .sapMTitle{
+	color: #333
+}
+.sapMText[data-mydata="White"] {
+    color:#fff;
+}

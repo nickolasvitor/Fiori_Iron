@@ -1,0 +1,60 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:f="sap.f"
+	controllerName="com.gcb.ironhouse.app.controller.Login">
+	<Page showHeader="true" title="{i18n>loginTitle}" showFooter="true" showNavButton="false" backgroundDesign="Solid">
+		<headerContent showSeparatorAfter="true"></headerContent>
+		<content>
+			<FlexBox alignItems="Center" justifyContent="Center" direction="Column" class="sapUiResponsiveContentPadding">
+				<Image src="/webapp/resources/Logo_Iron_House_50p.png" height="{/imageHeight}" width="{/imageWidth}"
+					class="sapUiMediumMarginTop" >
+					<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+				</Image>
+				</FlexBox>
+				<form:Form width="75%" editable="true" visible="true" class="sapUiLargeMarginBegin sapUiLargeMarginTop">
+					<form:formContainers>
+						<form:FormContainer visible="true">
+							<form:formElements>
+								<form:FormElement visible="true">
+									<form:label>
+										<Label text="{i18n>id}" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+									</form:label>
+									<form:fields>
+										<Input id="inputDocumentId" type="Text" value="{ path: 'login>/document' }" change="onChangeDocument" showValueHelp="false" enabled="true"
+											visible="true" width="auto" valueStateText="Invalid entry" maxLength="0"/>
+									</form:fields>
+								</form:FormElement>
+								<form:FormElement visible="true">
+									<form:label>
+										<Label text="{i18n>password}" width="100%" required="false" textAlign="Begin" visible="true"/>
+									</form:label>
+									<form:fields>
+										<Input id="inputPasswordId" type="Password" value="{login>/password}" enabled="true" visible="true" width="auto" maxLength="0"/>
+									</form:fields>
+								</form:FormElement>
+							</form:formElements>
+							<form:title/>
+						</form:FormContainer>
+					</form:formContainers>
+					<form:layout>
+						<form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="1" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+					</form:layout>
+				</form:Form>
+				<Link text="{i18n>firstAccessQuestion}" textAlign="Center" width="100%" target="_blank" wrapping="false" enabled="true" visible="true"
+					emphasized="false" subtle="false" press="_onPressFirstAccess"/>
+			
+		</content>
+		<footer>
+			<OverflowToolbar design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="{i18n>recoveryPassword}" type="Default" press="_onPressPasswordRecovery"/>
+					<Button text="{i18n>login}" type="Emphasized" press="_onPressLogin"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>
